@@ -8,7 +8,7 @@ export default class Details extends Component {
     return (
             <ProductConsumer>
             {value => {
-                const {id,author,img,info,price,title,inCart} = value.detailProduct //assigned variable stores detailProduct for later use
+                const {id,manufacturer,img,info,price,name,inCart} = value.detailProduct //assigned variable stores detailProduct for later use
                 return ( 
                    <div className='container py-5'>
                        {/* title */}
@@ -27,9 +27,9 @@ export default class Details extends Component {
                            </div>
                         {/* product text */}
                            <div className='col-10 mx-auto col-md-6 my-3 text-capitalize'>
-                                <h2>Title: {title}</h2>
+                                <h2>Name: {name}</h2>
                                 <h4 className='text-title text-uppercase text-muted mt-3 mb-2'>
-                                    Author: <span className='text-uppercase'>{author}</span>
+                                    Manufacturer: <span className='text-uppercase'>{manufacturer}</span>
                                 </h4>
                                 <h4 className='text-blue'>
                                     <strong>
@@ -43,7 +43,7 @@ export default class Details extends Component {
                                 {/* buttons */}
                                 <div> 
                                    <Link to='/'>
-                                       <ButtonContainer>Back to Books</ButtonContainer>
+                                       <ButtonContainer>Back to Main Page</ButtonContainer>
                                    </Link>
                                    {/* boolean value for button decides if 'add to cart' or 'in cart' displays */}
                                    {/* ButtonContainer cart prop is passed to styled-component so color can change with status */}
