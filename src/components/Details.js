@@ -8,28 +8,28 @@ export default class Details extends Component {
     return (
             <ProductConsumer>
             {value => {
-                const {id,manufacturer,img,info,price,name,inCart} = value.detailProduct //assigned variable stores detailProduct for later use
+                const {id,author,img,info,price,title,inCart} = value.detailProduct //assigned variable stores detailProduct for later use
                 return ( 
-                   <div className='container py-5'>
+                <div className='container py-5'>
                        {/* title */}
-                       <div className='row'>
-                           {/* <div className='col-10 mx-auto text-center text-slanted text-blue my-5'>
+                    <div className='row'>
+                        {/* <div className='col-10 mx-auto text-center text-slanted text-blue my-5'>
                                 <h1>
                                 {title}
                                 </h1>
                            </div> */}
-                       </div>
+                    </div>
                        {/* end title */}
                        {/* product info */}
-                       <div className='row'>
-                           <div className='col-10 mx-auto col-md-6 my-3'>
+                    <div className='row'>
+                        <div className='col-10 mx-auto col-md-6 my-3'>
                                 <img src={img} className='img-fluid' alt='product'/>
-                           </div>
+                        </div>
                         {/* product text */}
-                           <div className='col-10 mx-auto col-md-6 my-3 text-capitalize'>
-                                <h2>Name: {name}</h2>
+                        <div className='col-10 mx-auto col-md-6 my-3 text-capitalize'>
+                                <h2>Title: {title}</h2>
                                 <h4 className='text-title text-uppercase text-muted mt-3 mb-2'>
-                                    Manufacturer: <span className='text-uppercase'>{manufacturer}</span>
+                                    Author: <span className='text-uppercase'>{author}</span>
                                 </h4>
                                 <h4 className='text-blue'>
                                     <strong>
@@ -42,29 +42,29 @@ export default class Details extends Component {
                                 <p className='text-muted lead'>{info}</p>
                                 {/* buttons */}
                                 <div> 
-                                   <Link to='/'>
-                                       <ButtonContainer>Back to Main Page</ButtonContainer>
-                                   </Link>
+                                <Link to='/'>
+                                    <ButtonContainer>Back to Books</ButtonContainer>
+                                </Link>
                                    {/* boolean value for button decides if 'add to cart' or 'in cart' displays */}
                                    {/* ButtonContainer cart prop is passed to styled-component so color can change with status */}
                                    {/* similiar to Context Api, must use a function for conditional rendering in Button.js to switch color to yellow if button is 'Add to Cart' */}
-                                   <ButtonContainer 
-                                   cart 
-                                   disabled={inCart? true : false} 
-                                   onClick={() => {
-                                       value.addToCart(id);
-                                       value.openModal(id);
-                                   }}
-                                   > 
-                                       {inCart?"inCart" : "add to cart"} 
-                                   </ButtonContainer> 
+                                <ButtonContainer 
+                                cart 
+                                disabled={inCart? true : false} 
+                                onClick={() => {
+                                    value.addToCart(id);
+                                    value.openModal(id);
+                                }}
+                                > 
+                                    {inCart?"inCart" : "add to cart"} 
+                                </ButtonContainer> 
                                 </div>
-                           </div>
-                       </div>
-                   </div> 
+                        </div>
+                    </div>
+                </div> 
                 )
-               }}
-           </ProductConsumer>
+            }}
+        </ProductConsumer>
         )
         }
     }
