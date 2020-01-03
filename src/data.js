@@ -5,7 +5,7 @@ https://www.iconfinder.com/Makoto_msk */
 
 export const detailProduct = {
   id: 1,
-  title: "OGoogle Pixelbook",
+  title: "Google Pixelbook",
   img: "img/product-1.png",
   price: 999,
   manufacturer: 'Google',

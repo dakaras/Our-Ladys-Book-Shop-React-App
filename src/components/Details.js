@@ -43,7 +43,7 @@ export default class Details extends Component {
                                 {/* buttons */}
                                 <div> 
                                 <Link to='/'>
-                                    <ButtonContainer>Back to Books</ButtonContainer>
+                                    <ButtonContainer>Home</ButtonContainer>
                                 </Link>
                                    {/* boolean value for button decides if 'add to cart' or 'in cart' displays */}
                                    {/* ButtonContainer cart prop is passed to styled-component so color can change with status */}
