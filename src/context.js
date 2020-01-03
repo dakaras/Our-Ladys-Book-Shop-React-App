@@ -101,7 +101,7 @@ class ProductProvider extends Component {
         let tempProducts = [...this.state.products];
         let tempCart  = [...this.state.cart];
 
-        tempCart = tempCart.filter(item => item.id != id)
+        tempCart = tempCart.filter(item => item.id !== id)
 
         const index = tempProducts.indexOf(this.getItem(id))
         let removedProduct = tempProducts[index];
